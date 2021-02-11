@@ -8,6 +8,7 @@
     "gatsby"
   ],
   "scripts": {
+    "try-first": "git submodule update --init",
     "develop": "gatsby develop",
     "start": "gatsby develop",
     "build": "git submodule update --remote && gatsby build",
