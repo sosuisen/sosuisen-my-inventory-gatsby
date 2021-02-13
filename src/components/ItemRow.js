@@ -8,9 +8,11 @@ const getLocalDateAndTime = (utcDateAndTime) => {
   );
   const offset = new Date().getTimezoneOffset();
   const utcMsec = Date.parse(regularUTC);
-  const localMsec = utcMsec - offset * 60 * 1000;
 
-  return new Date(localMsec).toISOString().replace(/^(.+?)T(.+?)\..+?$/, '$1 $2');
+  const localMsec = utcMsec - offset * 60 * 1000;
+  const localDate = new Date(localMsec);
+  const zeroPad = (num) => ('00' + num).slice(-2);
+  return `${localDate.getFullYear()}/${zeroPad(localDate.getMonth()+1)}/${zeroPad(localDate.getDay())} ${zeroPad(localDate.getHours())}:${zeroPad(localDate.getMinutes())}`;
 };
 
 const ItemRow = (props) => {
