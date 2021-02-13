@@ -44,7 +44,6 @@ const IndexPage = () => {
     else return 0;
   });
   const lastModifiedDate = sortedItemEdges[0].node.modified_date;
-  console.log(lastModifiedDate);
 
   const boxHash = dbResult.allBoxJson.edges.reduce((result, current) => {
     result[current.node._id.replace('box/','')] = current.node;
