@@ -47,9 +47,16 @@ const IndexPage = () => {
     <main>
       <title>疏水箱</title>
       <div style={{width: '1000px', marginLeft: 'auto', marginRight: 'auto'}}>
+        <p>
+          疏水箱。
+        </p>
+        {orderedBoxes.map(box => (
+          <span>[<a href={`#${box._id}`}>{box.name}</a>]&nbsp;&nbsp;</span>
+          ))
+        }
         {orderedBoxes.map(box => (
           <div key={box._id}>
-            <p>{box.name}</p>
+            <p id={box._id}>{box.name}</p>
             {
               box.items.map((itemId, index) => (<ItemRow key={itemId} item={itemHash[itemId]} index={index}></ItemRow>))
             }
