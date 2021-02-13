@@ -55,9 +55,13 @@ const IndexPage = () => {
     <main>
       <title>疏水箱</title>
       <div id='top' style={{width: '1000px', marginLeft: 'auto', marginRight: 'auto'}}>
-        <p>
-          疏水箱。　　　<span style={{fontSize: '12px', color: '#909090'}}>最終更新：{getLocalDateAndTime(lastModifiedDate)}</span>
-        </p>
+        <div style={{textAlign: 'right', fontSize: '12px', color: '#909090'}}>最終更新：{getLocalDateAndTime(lastModifiedDate)}</div>
+        <div style={{fontSize: '16px'}}>
+          疏水箱
+        </div>
+        <div style={{marginTop: '14px', marginBottom: '7px', fontSize: '12px'}}>
+          どの箱になにが入ってるかの記録です。
+        </div>
         {orderedBoxes.map(box => (
           <span>[<a href={`#${box._id}`}>{box.name}</a>]&nbsp;&nbsp;</span>
           ))
