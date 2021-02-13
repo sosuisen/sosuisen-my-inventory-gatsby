@@ -12,7 +12,7 @@ const getLocalDateAndTime = (utcDateAndTime) => {
   const localMsec = utcMsec - offset * 60 * 1000;
   const localDate = new Date(localMsec);
   const zeroPad = (num) => ('00' + num).slice(-2);
-  return `${localDate.getFullYear()}/${zeroPad(localDate.getMonth()+1)}/${zeroPad(localDate.getDay())} ${zeroPad(localDate.getHours())}:${zeroPad(localDate.getMinutes())}`;
+  return `${localDate.getFullYear()}/${zeroPad(localDate.getMonth()+1)}/${zeroPad(localDate.getDate())} ${zeroPad(localDate.getHours())}:${zeroPad(localDate.getMinutes())}`;
 };
 
 const ItemRow = (props) => {
