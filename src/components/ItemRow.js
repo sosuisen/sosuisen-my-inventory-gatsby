@@ -20,7 +20,7 @@ const ItemRow = (props) => {
     <div className={`${ItemRowStyle.col} ${ItemRowStyle.takeout}`}>
       {props.item.takeout ? '*' : '-'}
     </div>
-    <div className={`${ItemRowStyle.col} ${ItemRowStyle.name}`}>{props.item.name}</div>
+    <div className={`${ItemRowStyle.col} ${ItemRowStyle.name}`}><a name={props.item._id} href={`#${props.item._id}`} style={{textDecoration: 'none'}}>■</a>&nbsp;{props.item.name}</div>
     <div className={`${ItemRowStyle.col} ${ItemRowStyle.modified_date}`}>
       {getLocalDateAndTime(props.item.modified_date).substr(0, 16)}
     </div>
