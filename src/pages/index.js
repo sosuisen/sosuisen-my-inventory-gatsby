@@ -45,8 +45,8 @@ const IndexPage = () => {
 
   return (
     <main>
-      <title>My Inventory</title>
-      <div>
+      <title>疏水箱</title>
+      <div style={{width: '1000px', marginLeft: 'auto', marginRight: 'auto'}}>
         {orderedBoxes.map(box => (
           <div key={box._id}>
             <p>{box.name}</p>
