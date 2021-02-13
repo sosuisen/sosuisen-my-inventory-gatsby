@@ -1,0 +1,29 @@
+.row {
+  clear: both;
+  height: 34px;
+  width: 980px;
+}
+.color_bg {
+  background-color: #e0ffe0;
+}
+.col {
+  float: left;
+  padding: 5px 7px 3px 7px;
+  font-size: 16px;
+  height: 26px;
+}
+.name {
+  width: 800px;
+  padding: 6px 0px 0px 0px;
+  margin: 0px;
+}
+.modified_date{
+  text-align: center;  
+  padding-top: 9px;
+  font-size: 12px;
+  width: 110px;  
+}
+.takeout{
+  text-align: center;
+  width: 30px;
+}

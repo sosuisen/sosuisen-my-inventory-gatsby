@@ -1,5 +1,6 @@
-import * as React from "react"
-import { graphql, StaticQuery, useStaticQuery } from "gatsby"
+import * as React from 'react'
+import { graphql, useStaticQuery } from 'gatsby'
+import ItemRow from '../components/ItemRow'
 
 // markup
 const IndexPage = () => {
@@ -44,17 +45,13 @@ const IndexPage = () => {
 
   return (
     <main>
-      <title>Home Page</title>
+      <title>My Inventory</title>
       <div>
         {orderedBoxes.map(box => (
-          <div>
+          <div key={box._id}>
             <p>{box.name}</p>
             {
-              box.items.map(itemId => (
-                <ul>
-                  <li>{itemHash[itemId].name}, {itemHash[itemId].created_date}, {itemHash[itemId].takeout ? '持出中' : '-'}</li>
-                </ul>
-              ))
+              box.items.map((itemId, index) => (<ItemRow key={itemId} item={itemHash[itemId]} index={index}></ItemRow>))
             }
           </div>))
         }
