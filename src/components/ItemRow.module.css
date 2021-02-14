@@ -16,6 +16,9 @@
   width: 800px;
   padding: 6px 0px 0px 0px;
   margin: 0px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 .modified_date{
   text-align: center;  
