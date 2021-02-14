@@ -1,7 +1,7 @@
 export const getLocalDateAndTime = (utcDateAndTime) => {
   const regularUTC = utcDateAndTime.replace(
-    /^(\d\d\d\d-\d\d-\d\d).(\d\d:\d\d:\d\d)/,
-    '$1 $2'
+    /^(\d\d\d\d)-(\d\d)-(\d\d).(\d\d:\d\d:\d\d)/,
+    '$1/$2/$3 $4'
   );
   const offset = new Date().getTimezoneOffset();
   const utcMsec = Date.parse(regularUTC);
