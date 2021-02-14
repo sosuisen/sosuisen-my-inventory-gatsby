@@ -2,6 +2,7 @@ import * as React from 'react'
 import { graphql, useStaticQuery } from 'gatsby'
 import ItemRow from '../components/ItemRow'
 import { getLocalDateAndTime } from '../utils/date';
+import indexStyle from './index.module.css';
 
 // markup
 const IndexPage = () => {
@@ -54,12 +55,12 @@ const IndexPage = () => {
   return (
     <main>
       <title>疏水箱</title>
-      <div id='top' style={{width: '1000px', marginLeft: 'auto', marginRight: 'auto'}}>
-        <div style={{textAlign: 'right', fontSize: '12px', color: '#909090'}}>最終更新：{getLocalDateAndTime(lastModifiedDate)}</div>
-        <div style={{fontSize: '16px'}}>
+      <div id='top' className={indexStyle.top}>
+        <div className={indexStyle.lastModifiedDate}>最終更新：{getLocalDateAndTime(lastModifiedDate)}</div>
+        <div className={indexStyle.title}>
           疏水箱
         </div>
-        <div style={{marginTop: '14px', marginBottom: '7px', fontSize: '12px'}}>
+        <div className={indexStyle.description}>
           どの箱になにが入ってるかの記録です。
         </div>
         {orderedBoxes.map(box => (
