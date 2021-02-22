@@ -68,14 +68,19 @@ const IndexPage = () => {
           ))
         }
         {orderedBoxes.map(box => (
-          <div key={box._id}>a
+          <div key={box._id}>
             <p id={box._id}><a href={`#${box._id}`}>{box.name}</a>&nbsp;&nbsp;<a href={`#top`}>↑</a></p>
             {
               box.items.map((itemId, index) => (<ItemRow key={itemId} item={itemHash[itemId]} index={index}></ItemRow>))
             }
           </div>))
         }
+        <hr />        
+        <div className={indexStyle.footnote}>
+          Powered by <a href='https://github.com/sosuisen/git-documentdb'>GitDocumentDB</a>
+        </div>        
       </div>
+
     </main>
   )
 }

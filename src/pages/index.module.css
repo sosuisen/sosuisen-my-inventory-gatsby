@@ -23,3 +23,8 @@ body {
   margin-bottom: 7px;
   font-size: 12px;
 }
+
+.footnote {
+  text-align: right;
+  margin-bottom: 24px;
+}
