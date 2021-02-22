@@ -36,7 +36,7 @@ const IndexPage = () => {
     }  
   `);
   const itemHash = dbResult.allItemJson.edges.reduce((result, current) => {
-    result[current.node._id.replace('item/','')] = current.node;
+    result[current.node._id] = current.node;
     return result;
   }, {});
   const sortedItemEdges = [...dbResult.allItemJson.edges].sort((a, b) => {
@@ -47,7 +47,7 @@ const IndexPage = () => {
   const lastModifiedDate = sortedItemEdges[0].node.modified_date;
 
   const boxHash = dbResult.allBoxJson.edges.reduce((result, current) => {
-    result[current.node._id.replace('box/','')] = current.node;
+    result[current.node._id] = current.node;
     return result;
   }, {});
   const orderedBoxes = dbResult.workJson.boxOrder.map(boxId => boxHash[boxId]);
@@ -68,7 +68,7 @@ const IndexPage = () => {
           ))
         }
         {orderedBoxes.map(box => (
-          <div key={box._id}>
+          <div key={box._id}>a
             <p id={box._id}><a href={`#${box._id}`}>{box.name}</a>&nbsp;&nbsp;<a href={`#top`}>↑</a></p>
             {
               box.items.map((itemId, index) => (<ItemRow key={itemId} item={itemHash[itemId]} index={index}></ItemRow>))
