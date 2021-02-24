@@ -38,7 +38,7 @@ node "Local App\n(Inventory Manager)" {
 
 localrepos -(0)- sourcerepos : Synchronize (pull and push)
 
-node "Netlify" {
+node "Hosting" {
   component "Static website" as website {
     component "Build hooks" as buildhooks
   }
