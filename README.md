@@ -2,7 +2,7 @@
 
 [GitDocumentDB](https://github.com/sosuisen/git-documentdb) is an offline-first DocumentDB using Git, it means that distributed data are consistently synchronized by Git's approach.
 
-Using GitHub and GitDocumentDB are suitable for Continuous Deployment (CD) as shown in the figure below.
+Using GitHub and GitDocumentDB is suitable for Continuous Deployment (CD) as shown in the figure below.
 
 Offline-first apps that use a key-value stores will be easier to sync by GitDocumentDB. That is because
 - Git is distributed and can be synchronized by nature.
