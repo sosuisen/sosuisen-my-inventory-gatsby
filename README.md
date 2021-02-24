@@ -15,8 +15,8 @@ An example of CD using GitDocumentDB is shown in the next figure.
 
 - **Local App** named **[Inventory Manager](https://github.com/sosuisen/inventory-manager)** is an offline-first CRUD app.
   - Creates, reads, updates and deletes items in a local Git repository
-  - The local Git repository is synchronizing with Source GitHub repository.
-- **Source GitHub repository** named [sosuisen-my-inventory](https://github.com/sosuisen/sosuisen-my-inventory) has GitHub actions that trigger build hooks on push.
+  - The local Git repository is synchronizing with Source Git repository on GitHub.
+- **Source Git repository** named [sosuisen-my-inventory](https://github.com/sosuisen/sosuisen-my-inventory) has GitHub actions that trigger build hooks on push.
     - https://github.com/sosuisen/sosuisen-my-inventory/blob/main/.github/workflows/netlify.yml
 - **Generator Git repository** named [sosuisen-my-inventory-gatsby](https://github.com/sosuisen/sosuisen-my-inventory-gatsby) (exactly you are here) contains [Gatsby](https://www.gatsbyjs.com/) site generator.
   - Generator Git repository has Source Git repository as a Git submodule, so gatsby can get source JSON files by 'git submodule update --remote' command.
