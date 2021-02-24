@@ -13,12 +13,12 @@ Offline-first apps that use key-value stores will be easier to sync by GitDocume
 
 An example of CD using GitDocumentDB is shown in the next figure.
 
-- **Local App** named **Inventory Manager** is an offline-first CRUD app.
+- **Local App** named **[Inventory Manager](https://github.com/sosuisen/inventory-manager)** is an offline-first CRUD app.
   - Creates, reads, updates and deletes items in a local Git repository
-  - THe local Git repository is synchronizing with **Source GitHub repository** named [sosuisen-my-inventory](https://github.com/sosuisen/sosuisen-my-inventory).
-  - GitHub actions in **Source GitHub repository** triggers build hooks on push.
+  - The local Git repository is synchronizing with **Source GitHub repository** named [sosuisen-my-inventory](https://github.com/sosuisen/sosuisen-my-inventory).
+  - GitHub actions in Source GitHub repository trigger build hooks on push.
     - https://github.com/sosuisen/sosuisen-my-inventory/blob/main/.github/workflows/netlify.yml
-- Generator Git repository (exactly **this** repository) contains [Gatsby](https://www.gatsbyjs.com/)) site generator.
+- **Generator Git repository** (exactly you are [here](https://github.com/sosuisen/sosuisen-my-inventory-gatsby)) contains [Gatsby](https://www.gatsbyjs.com/) site generator.
   - Generator Git repository has Source Git repository as a Git submodule, so gatsby can get source JSON files by 'git submodule update --remote' command.
 - Generated Web site is https://sosuisen-my-inventory.netlify.app/
 
