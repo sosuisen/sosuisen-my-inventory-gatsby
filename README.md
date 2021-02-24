@@ -22,4 +22,6 @@ An example of CD using GitDocumentDB is shown in the next figure.
   - Generator Git repository has Source Git repository as a Git submodule, so gatsby can get source JSON files by 'git submodule update --remote' command.
 - Generated Web site is https://sosuisen-my-inventory.netlify.app/
 
+NOTE: Actually build scripts run on Netlify.
+
 ![CD using GitDocumentDB](https://github.com/sosuisen/sosuisen-my-inventory-gatsby/blob/main/out/doc/cd/cd.png)
