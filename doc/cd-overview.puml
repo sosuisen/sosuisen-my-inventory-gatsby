@@ -10,7 +10,7 @@ node "GitHub" {
   }
 }
 
-node "Netlify" {
+node "Hosting" {
   component "Static website" as website {
     component "Build hooks" as buildhooks
   }
