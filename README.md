@@ -6,7 +6,7 @@ Using GitHub and GitDocumentDB is suitable for Continuous Deployment (CD) as sho
 
 Offline-first apps that use key-value stores will be easier to sync by GitDocumentDB. That is because ...
 - Git is distributed and can be synchronized by nature.
-- Local and remote DBs are completely the same database system (Git).
+- Local and remote DBs use completely the same database system (Git).
 - Git and Git platforms like GitHub are de facto.
 
 ![Overview of Continuous Deployment using GitDocumentDB](https://github.com/sosuisen/sosuisen-my-inventory-gatsby/blob/main/out/doc/cd-overview/cd-overview.png)
