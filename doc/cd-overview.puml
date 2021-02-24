@@ -27,7 +27,7 @@ node "Local App" {
 node "Other apps" as apps #ffffff;line.dotted
 
 node "Other services" as others #ffffff;line.dotted
-localrepos -(0)- sourcerepos : Synchronize (push and pull)
+localrepos -(0)- sourcerepos : Synchronize (pull and push)
 buildhooks -le(0- sourcerepos : build
 githubaction -(0- buildhooks
 others -~le(0)- githubaction
