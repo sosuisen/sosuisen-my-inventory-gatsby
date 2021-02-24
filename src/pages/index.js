@@ -58,7 +58,7 @@ const IndexPage = () => {
   return (
     <main>
       <title>疏水箱</title>
-      <div id='top' className={indexStyle.top}>
+      <div id='top' className={indexStyle.sosuibako}>
         <div className={indexStyle.lastModifiedDate}>最終更新：{getLocalDateAndTime(lastModifiedDate)}</div>
         <div className={indexStyle.title}>
           疏水箱
