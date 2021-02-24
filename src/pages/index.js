@@ -77,7 +77,9 @@ const IndexPage = () => {
         }
         <hr />        
         <div className={indexStyle.footnote}>
-          Powered by <a href='https://github.com/sosuisen/git-documentdb'>GitDocumentDB</a>
+          Powered by <a href='https://github.com/sosuisen/git-documentdb'>GitDocumentDB</a><br />
+          - Data source: <a href='https://github.com/sosuisen/sosuisen-my-inventory'>https://github.com/sosuisen/sosuisen-my-inventory</a><br />
+          - Site generator: <a href='https://github.com/sosuisen/sosuisen-my-inventory-gatsby'>https://github.com/sosuisen/sosuisen-my-inventory-gatsby</a>
         </div>        
       </div>
 
