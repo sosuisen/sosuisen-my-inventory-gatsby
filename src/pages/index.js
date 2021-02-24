@@ -3,6 +3,9 @@ import { graphql, useStaticQuery } from 'gatsby'
 import ItemRow from '../components/ItemRow'
 import { getLocalDateAndTime } from '../utils/date';
 import indexStyle from './index.module.css';
+import { FiArrowUpCircle } from "react-icons/fi";
+import { FcAbout } from "react-icons/fc";
+import { GiCardboardBox } from "react-icons/gi";
 
 // markup
 const IndexPage = () => {
@@ -64,22 +67,35 @@ const IndexPage = () => {
           どの箱になにが入ってるかの記録です。
         </div>
         {orderedBoxes.map(box => (
-          <span>[<a href={`#${box._id}`}>{box.name}</a>]&nbsp;&nbsp;</span>
+          <a style={{textDecoration: 'none'}} href={`#${box._id}`}>
+            <div className={indexStyle.boxIndex}>{box.name}</div>
+          </a>
           ))
         }
+        <br style={{clear: 'both'}} />
         {orderedBoxes.map(box => (
-          <div key={box._id}>
-            <p id={box._id}><a href={`#${box._id}`}>{box.name}</a>&nbsp;&nbsp;<a href={`#top`}>↑</a></p>
+          <div className={indexStyle.boxContents} key={box._id}>
+            <div id={box._id} className={indexStyle.boxRow}>
+            <a href={`#${box._id}`}>
+              <div className={indexStyle.boxLink}>
+                <div className={indexStyle.boxIcon}><GiCardboardBox /></div>
+                <div className={indexStyle.boxName}>{box.name}</div>
+              </div>
+            </a>
+            <a href={`#top`}><div className={indexStyle.gototop}><FiArrowUpCircle style={{fontSize: '20px'}}/></div></a></div>
             {
               box.items.map((itemId, index) => (<ItemRow key={itemId} item={itemHash[itemId]} index={index}></ItemRow>))
             }
           </div>))
         }
-        <hr />        
+        <hr style={{width: '980px', marginLeft: '0px', marginTop: '24px', border: 'none', height: '2px', backgroundColor: '#c08070'}}/>        
         <div className={indexStyle.footnote}>
-          Powered by <a href='https://github.com/sosuisen/git-documentdb'>GitDocumentDB</a><br />
+          <div style={{float: 'left', marginRight:  '7px'}}><FcAbout style={{fontSize: '24px'}}/></div>
+          <div style={{marginTop: '4px', float: 'left'}}>Powered by <a href='https://github.com/sosuisen/git-documentdb'>GitDocumentDB</a></div>
+          <div style={{clear: 'both'}}>          
           - Data source: <a href='https://github.com/sosuisen/sosuisen-my-inventory'>https://github.com/sosuisen/sosuisen-my-inventory</a><br />
           - Site generator: <a href='https://github.com/sosuisen/sosuisen-my-inventory-gatsby'>https://github.com/sosuisen/sosuisen-my-inventory-gatsby</a>
+          </div>
         </div>        
       </div>
 

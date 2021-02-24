@@ -4,7 +4,7 @@
   width: 980px;
 }
 .color_bg {
-  background-color: #e0ffe0;
+  background-color: #fff0e0;
 }
 .col {
   float: left;
@@ -31,4 +31,5 @@
   padding-top: 8px;  
   font-size: 12px;
   width: 40px;
+  cursor: help;  
 }
