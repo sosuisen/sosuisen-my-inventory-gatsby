@@ -36,7 +36,7 @@ node "Local App\n(Inventory Manager)" {
   }
 }
 
-localrepos -(0)- sourcerepos : Synchronize (push and pull)
+localrepos -(0)- sourcerepos : Synchronize (pull and push)
 
 node "Netlify" {
   component "Static website" as website {
