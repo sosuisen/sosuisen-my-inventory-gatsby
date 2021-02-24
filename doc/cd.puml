@@ -1,7 +1,7 @@
 ' PlantUML
 @startuml cd
 
-title Continuouse Deployment using GitDocumentDB
+title Continuous Deployment using GitDocumentDB
 
 node "GitHub" {
   database "Generator Git repository\n(sosuisen-my-inventory-gatsby)" as generatorrepos  #f0fff0;line:green{
