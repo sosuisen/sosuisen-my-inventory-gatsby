@@ -1,0 +1,35 @@
+' PlantUML
+@startuml cd-overview
+
+node "GitHub" {
+  database "Git repository" as sourcerepos #fff0f0;line:red{
+    collections "GitHub actions" as githubaction #ffffff
+    collections "JSON files" as json #3030f0;text:white
+  }
+}
+
+node "Netlify" {
+  component "Static website" as website {
+    component "Build hooks" as buildhooks
+  }
+}
+
+node "Local App" {
+  database "GitDocumentDB" as gitddb #f0f0ff {
+    database "Local Git repository" as localrepos {
+      collections "JSON files" as localjson #3030f0;text:white
+    }
+  }
+}
+
+node "Other apps" as apps #ffffff;line.dotted
+
+node "Other services" as others #ffffff;line.dotted
+localrepos -(0)- sourcerepos : Synchronize (push and pull)
+buildhooks -le(0- sourcerepos : build
+githubaction -(0- buildhooks
+others -~le(0- githubaction
+apps -~(0- sourcerepos
+
+
+@enduml
