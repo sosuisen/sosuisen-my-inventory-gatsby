@@ -30,8 +30,8 @@ node "Other services" as others #ffffff;line.dotted
 localrepos -(0)- sourcerepos : Synchronize (push and pull)
 buildhooks -le(0- sourcerepos : build
 githubaction -(0- buildhooks
-others -~le(0- githubaction
-apps -~(0- sourcerepos
+others -~le(0)- githubaction
+apps -~(0)- sourcerepos
 
 
 @enduml
