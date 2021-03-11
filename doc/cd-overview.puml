@@ -2,36 +2,35 @@
 @startuml cd-overview
 
 title Overview of Continuous Deployment using GitDocumentDB
+!define ICONURL https://raw.githubusercontent.com/tupadr3/plantuml-icon-font-sprites/v2.2.0
+!includeurl ICONURL/common.puml
+!includeurl ICONURL/devicons/github_badge.puml
+!includeurl ICONURL/devicons/git.puml
+!includeurl ICONURL/font-awesome-5/cogs.puml
+!define SPRITESURL https://raw.githubusercontent.com/plantuml-stdlib/gilbarbara-plantuml-sprites/v1.0/sprites
+!includeurl SPRITESURL/gatsby.puml
+!includeurl SPRITESURL/netlify.puml
+!includeurl SPRITESURL/electron.puml
 
-node "GitHub" {
-  database "Git repository" as sourcerepos #fff0f0;line:red{
-    collections "GitHub actions" as githubaction #ffffff
-    collections "JSON files" as json #3030f0;text:white
-  }
-}
-
-node "Hosting" {
-  component "Static website" as website {
-    component "Build hooks" as buildhooks
-  }
-}
-
-node "Local App" {
-  database "GitDocumentDB" as gitddb #f0f0ff {
-    database "Local Git repository" as localrepos {
+node "<$electron>\nLocal App" {
+    database "GitDocumentDB" #f0f0ff;line:blue{
+    DEV_GIT(localrepos, Local Git repository, database) #f0f0ff;line:blue;line.dashed;{
       collections "JSON files" as localjson #3030f0;text:white
     }
   }
 }
 
-node "Other apps" as apps #ffffff;line.dotted
+DEV_GITHUB_BADGE(sourcerepos, GitHub, database) #fff0f0;line:red{
+  FA5_COGS(githubactions, GitHub actions, control) #ffffff  
+}
 
-node "Other services" as others #ffffff;line.dotted
-localrepos -(0)- sourcerepos : Synchronize (pull and push)
-buildhooks -le(0- sourcerepos : build
-githubaction -(0- buildhooks
-others -~le(0)- githubaction
-apps -~(0)- sourcerepos
+node "<$netlify>Hosting" {
+  collections "Static website" as website
+  FA5_COGS(githubapps, "GitHubApps", control)
+}
 
+localrepos <--> sourcerepos : Synchronize\n(pull, resolve conflicts and push)
+githubapps -up-> sourcerepos : read
+githubapps <-- sourcerepos : hook
 
 @enduml
