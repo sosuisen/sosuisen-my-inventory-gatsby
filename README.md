@@ -24,4 +24,4 @@ An example of CD using GitDocumentDB is shown in the next figure.
   - GitHub Apps read Generator Git repository and run Gatsby when triggered by push.
 - Generated Web site is https://sosuisen-my-inventory.netlify.app/
 
-![CD using GitDocumentDB](https://github.com/sosuisen/sosuisen-my-inventory-gatsby/blob/main/out/doc/cd/cd.png)
+<img src="https://github.com/sosuisen/sosuisen-my-inventory-gatsby/blob/main/out/doc/cd/cd.png" alt="CD using GitDocumentDB" width="480">
